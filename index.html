@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>家調官＋社工 訪視雙檢查表・通用版</title>
+<style>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.8;color:#1a1a1a;margin:0;background:#f6f7f9;font-size:16px}
+header{background:#1a3a5f;color:#fff;padding:20px 16px 14px}
+header h1{margin:0 0 6px;font-size:20px;line-height:1.4}
+header p{margin:4px 0;font-size:13.5px;opacity:.92;line-height:1.6}
+nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #d7dde5;padding:8px;display:flex;gap:8px;overflow-x:auto;white-space:nowrap}
+nav a{flex:0 0 auto;font-size:14px;text-decoration:none;color:#1a3a5f;border:1.5px solid #1a3a5f;border-radius:999px;padding:6px 12px;background:#eef4fb}
+.wrap{max-width:720px;margin:0 auto;padding:12px 12px 60px}
+.card{background:#fff;border-radius:14px;padding:14px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+h2{font-size:18px;margin:22px 0 8px;border-left:6px solid #1a3a5f;padding-left:10px;line-height:1.4}
+h2 .n{background:#1a3a5f;color:#fff;border-radius:8px;padding:0 8px;margin-right:6px;font-size:16px}
+.small{font-size:13px;color:#555;line-height:1.7}
+.badge{display:inline-block;font-size:12px;border:1px solid #1a3a5f;border-radius:999px;padding:2px 10px;margin:2px 3px 2px 0;color:#1a3a5f;background:#eef4fb;line-height:1.6}
+a.badge{text-decoration:none;cursor:pointer}
+a.badge:active,a.badge:hover{background:#1a3a5f;color:#fff}
+h2[id]{scroll-margin-top:64px}
+.chk{flex:0 0 auto;width:24px;height:24px;accent-color:#1a3a5f;cursor:pointer}
+.chk:focus-visible{outline:3px solid #2a7a2a;outline-offset:2px}
+.progress{position:sticky;top:0;z-index:11;background:#1a3a5f;color:#fff;font-size:13px;padding:6px 12px;display:flex;gap:8px;align-items:center}
+.progress .bar{flex:1;height:8px;background:rgba(255,255,255,.25);border-radius:999px;overflow:hidden}
+.progress .bar>i{display:block;height:100%;width:0;background:#7fd07f;border-radius:999px;transition:width .2s}
+.progress button{flex:0 0 auto;font-size:12.5px;border-radius:999px;border:1px solid #fff;background:transparent;color:#fff;padding:3px 10px;cursor:pointer}
+.progress button:hover{background:rgba(255,255,255,.2)}
+@media print{
+  nav,.progress,footer{display:none !important}
+  body{background:#fff;font-size:12pt}
+  .wrap{max-width:none;padding:0}
+  .card,details{box-shadow:none;break-inside:avoid}
+  details>summary::after{display:none !important}
+  a{color:#000;text-decoration:none}
+}
+.quote{background:#f7f7f7;border-left:4px solid #999;padding:8px 10px;margin:8px 0;font-size:14px;border-radius:0 8px 8px 0}
+details{border:1.5px solid #d7dde5;border-radius:12px;margin:8px 0;background:#fff;overflow:hidden}
+details>summary{list-style:none;cursor:pointer;padding:13px 12px;font-size:15.5px;font-weight:700;line-height:1.5;display:flex;gap:10px;align-items:center}
+details>summary::-webkit-details-marker{display:none}
+details>summary::after{content:"詳情 ▾";flex:0 0 auto;margin-left:auto;font-size:13px;font-weight:400;color:#1a3a5f;background:#eef4fb;border:1.5px solid #1a3a5f;border-radius:999px;padding:3px 10px}
+details[open]>summary{background:#eef4fb}
+details[open]>summary::after{content:"收合 ▴";background:#1a3a5f;color:#fff}
+details .chk{flex:0 0 auto;width:24px;height:24px;accent-color:#1a3a5f;cursor:pointer}
+details .body{padding:0 12px 12px 12px;font-size:14.5px;border-top:1px dashed #d7dde5}
+.hint{font-size:13px;color:#555;background:#fff;border-radius:8px;padding:6px 10px;margin:6px 0}
+.why{color:#333;margin:8px 0}
+.safe{background:#eef7ee;border:1px solid #2a7a2a;border-radius:8px;padding:8px 10px;margin:6px 0;font-size:14px}
+.bad{background:#fff3f3;border:1px solid #b33;border-radius:8px;padding:8px 10px;margin:6px 0;font-size:14px}
+.warnbox{background:#fff3f3;border:2px solid #b33;border-radius:12px;padding:12px;font-size:14.5px}
+.compare{border:1px solid #d7dde5;border-radius:12px;padding:10px;margin:8px 0;background:#fff}
+.compare .t{font-weight:700;font-size:14.5px}
+.gloss{margin:0}
+.gloss .grp{font-size:15px;font-weight:700;margin:12px 0 4px;color:#1a3a5f}
+.gloss dt{font-weight:700;font-size:14.5px;margin:8px 0 0}
+.gloss dt .k{background:#eef4fb;border:1px solid #1a3a5f;border-radius:8px;padding:0 8px;margin-right:6px;font-size:13.5px;color:#1a3a5f}
+.gloss dd{margin:2px 0 0 0;font-size:14px;color:#333}
+footer{color:#666;font-size:12.5px;text-align:center;padding:20px}
+</style>
+</head>
+<body>
+<header>
+<h1>☐ 家調官＋社工 訪視雙檢查表</h1>
+<p>核心：自然、具體、友善、配合｜適用：親權酌定／改定、共同監護爭議、會面交往審查</p>
+<p class="small" style="color:#dbe6f5;opacity:1">通用版・可公開分享・無個案資訊。左邊方框點一下＝勾選完成；點整條或右邊「詳情」＝展開理由。僅供參考，不構成法律意見。更新：5組案例全併入。勾選狀態會存在這台裝置，下次打開還在。</p>
+</header>
+<div class="progress" role="status" aria-live="polite"><span id="ptext">已完成 0 / 20</span><span class="bar" aria-hidden="true"><i id="pfill"></i></span><button type="button" id="btn-print">列印 / 存PDF</button><button type="button" id="btn-reset">重設勾選</button></div>
+<nav>
+<a href="#s1">一・心法</a>
+<a href="#s2">二・家調官</a>
+<a href="#s3">三・社工</a>
+<a href="#s4">四・不要做</a>
+<a href="#s5">五・訪視後</a>
+<a href="#s6">六・案例</a>
+<a href="#s7">七・名詞</a>
+</nav>
+<div class="wrap">
+
+<h2 id="s1"><span class="n">一</span>心法：三份報告定勝負</h2>
+<div class="card">
+<p><b>心法：三份報告定勝負</b><br>家調官（法院內調查）＋社工（外包家訪）＋程序監理人（為孩子請的代表）。三份一致，法院高度採信。<br><span class="badge" title="當事人簡稱，字別以卷宗全稱為準">北院112抗更一3</span> <span class="badge" title="當事人簡稱，字別以卷宗全稱為準">北院111274・112家查56</span></p>
+<p><b>民法1055-1 I(6) 友善父母</b>：是否妨礙對方行使親權。擋會面、罵對方、灌輸、擅帶、鬧交付現場都扣分，嚴重可改定。<a class="badge" href="https://judgment.judicial.gov.tw/FJUD/data.aspx?ty=JD&id=TPDV%2c114%2c%e8%a8%b4%2c6029%2c20260224%2c2&ot=in" target="_blank" rel="noopener" title="臺灣臺北地方法院114年度訴字第6029號民事判決（115.02.24判賠12萬）原文">北院114訴6029 賠12萬 ↗</a></p>
+<p><b>改定不比優劣</b>：縱使一方稍優，也不當然改定，須有未盡保護教養或不利情事。<span class="badge">台南113抗更一2</span> <span class="badge">新北112抗更一2</span></p>
+<p class="quote">自然互動、具體照顧、區隔衝突＝加分；表演考試、丟包照顧、當面批評對造、誘導灌輸、拒絕訪視＝推定不適任。<br><span class="small">北院111抗更一2：虛稱主要照顧者、詆毀、妨礙訪視均推定不適任</span></p>
+<p class="quote">意願≠最佳利益，僅為因素之一。表意權不是通關密語、不是免死金牌。<span class="small">桃園114執事聲2；兒童權利公約§12依年齡成熟度權衡</span></p>
+</div>
+
+<h2 id="s2"><span class="n">二</span>家調官在看（查是非）</h2>
+<div class="card">
+
+<details open><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">1. 互動自然，小孩主導</summary><div class="body">
+<p class="why">叫表演才藝、對話多為管教＝界線不明、忠誠衝突。被肯認的是專注互動、創造遊戲、照顧感受、有區隔。<span class="small">（北院112抗更一3）</span></p>
+<div class="safe">「你們玩，我在旁邊，有需要叫我。」不考試、不表演。</div>
+</div></details>
+
+<details><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">2. 生活細節具體</summary><div class="body">
+<p class="why">起床接送、老師姓名、功課用藥要說得出。含糊會被記不細緻。<span class="small">（北院112抗更一3；台南114抗更一1）</span></p>
+<div class="safe">誰洗澡餵藥接送陪睡、藥名用途備藥位置、老師自理目標，知道才說。</div>
+</div></details>
+
+<details><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">3. 問到對造不批評</summary><div class="body">
+<p class="why">面前醜化、叫不要去對方家＝改定事由；傳恐嚇訊息另賠。<span class="small">（桃園111抗更一1；北院114訴6029）</span></p>
+<div class="safe">「他／她也愛小孩，我們配合會面。」</div>
+<div class="bad">避免忠誠綁架語。</div>
+</div></details>
+
+<details><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">4. 爭議一次講完，配合調查</summary><div class="body">
+<p class="why">同居、新伴侶、傷勢、通報，法院重家調綜合判斷，單張驗傷單不足證；重複通報扣友善；知情不報也失職。<span class="small">（高少家113聲抗更一2；台南115抗更一1；高院115原訴易1）</span></p>
+<div class="safe">「已配合相關機關調查，尊重專業，靜候認定。」不臆測鑑定。首次知悉即通報並留紀錄，寫何時何地何傷何人所見，不寫推論定罪語。</div>
+</div></details>
+
+<details><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">5. 影音交專業，不誘導</summary><div class="body">
+<p class="why">剪接、旁白、先給答案再問＝誘導，可另賠；誘導錄音通常無能力＋非友善。<span class="small">（嘉院113訴445；北院115訴1803；新北113訴2963）</span></p>
+<div class="safe">原檔封存交律師，不剪接、不重複問案情。已說秘密／不想談即停。</div>
+</div></details>
+
+<details><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">6. 學校醫療先授權查</summary><div class="body">
+<p class="why">家調會調通報、就醫、社工紀錄，面訪親屬核對錄音。擋訪視推定不適任。<span class="small">（高雄113抗更一2）</span></p>
+</div></details>
+
+<details><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">7. 經濟不取代陪伴</summary><div class="body">
+<p class="why">經濟佳但親職時間無法配合作息，不如任職彈性可陪伴方。長期未互動疏離，僅談錢不談陪伴會被打槍。<span class="small">（北院112抗更一1；台南115婚更一1；高院110抗更一4）</span> 實際照顧勞力可折扶養分擔，不以收入定親權。</p>
+<div class="safe">經濟優者仍須寫每日可配合的陪伴時段＋參與就醫接送課業的實績。為顧轉工時調班表者，記前後差異加分。</div>
+<div class="bad">輪班致每日換手、作息亂、過度倚賴代顧扣分；要說明如何親力建規範，非僅列人名。（高少家113抗更一2）</div>
+</div></details>
+
+<details><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">8. 子女意願這樣解讀</summary><div class="body">
+<p class="why">無固定年齡門檻，9歲以下可採但須註明單獨會談、熟悉自在、符合年齡表述。跟一方能聊對方、來電就僵硬迴避＝忠誠壓力。排除不當對待後，拒絕先假設自我保護非真意。反覆矛盾並列紀錄不追問。<span class="small">（高院台南114上易220；北院112抗更一3；桃園111抗更一1；新竹115訴195）</span></p>
+<div class="safe">不問選邊、不叫面交當場表態；3歲不要只記情境不作阻卻事由；兒童可隨時終止表意，拒答不記負面。</div>
+<div class="bad">封閉誘導、一問一答剪輯、成人詞彙＝不適法取證，無能力。（新竹115訴195）</div>
+</div></details>
+
+</div>
+
+<h2 id="s3"><span class="n">三</span>社工在看（能不能顧）</h2>
+<div class="card">
+
+<details open><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">1. 日常流程自然</summary><div class="body">
+<p class="why">鼓勵自理不配電視肯認；全程餵配電視記。聯絡簿誰簽、物品放哪＝實際照顧者。<span class="small">（台南114抗更一1；高少家112抗更一1）</span></p>
+</div></details>
+
+<details><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">2. 分工誠實講</summary><div class="body">
+<p class="why">委託支持系統屬常情，有說明有主導不扣分，隱瞞推諉才扣。虛稱都自己顧推定不適任。<span class="small">（高少家112抗更一1；北院111抗更一2）</span></p>
+<div class="safe">平日誰顧、誰補位、長輩到什麼程度、下班幾點接手一次講清。工時固定可順道接＋週末休＋同住親屬可助，工時長不當然否定主顧。（高院110抗更一4）</div>
+</div></details>
+
+<details><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">3. 出缺勤有據＋規範</summary><div class="body">
+<p class="why">縱容遲到缺席＝形塑規範有疑慮。偶發缺席要有當日請假＋補課證明。<span class="small">（北院111抗更一2）</span> 近一月遲缺能說明原因，有假單就醫證明校方紀錄可對；作息固定配合校規。</p>
+</div></details>
+
+<details><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">4. 居住空間安全</summary><div class="body">
+<p class="why">房少但動線擺設得當整潔可過關；空房無寢具厚灰＝無準備；睡沙發跌撞、寄讀無學籍扣分。<span class="small">（台南114抗更一1；新竹114司養聲10；台南115司家暫36；台南115抗更一1透天穩定）</span></p>
+<div class="safe">☐ 每童固定床位寢具不睡沙發地板 ☐ 動線得當整潔無異味堆積 ☐ 藥品清潔劑刀具上鎖高置 ☐ 有正式學籍固定學區不寄讀 ☐ 自有／長租不頻搬轉學</div>
+</div></details>
+
+<details><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">5. 汽座接送安全</summary><div class="body">
+<p class="why">快速道路未裝＋車內走動只開慢一點被記。<span class="small">（台南114抗更一1；北院111抗更一2）</span></p>
+<div class="safe">後座隨時裝適齡座椅必坐繫帶；說出固定接送人路線上下車點；不獨留車內、不車內走動；輪顧有書面表不擅自到校帶走。</div>
+</div></details>
+
+<details><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">6. 用藥備藥說得清</summary><div class="body">
+<p class="why">掌握用藥備藥營養品 vs 說不清長期藥用途只說配合對方。<span class="small">（台南114抗更一1）</span></p>
+<div class="safe">說出名稱用途劑量時段，備藥在效期內家中隨身分置，出示藥袋處方清單，交接有書面。</div>
+</div></details>
+
+<details><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">7. 保密＋家人不圍觀</summary><div class="body">
+<p class="why">錄影刺探壓力大；雙方迫表意都扣；圍觀幫腔放大扭曲獨佔黏著妨礙親情。<span class="small">（高少家112抗更一1；高雄113抗更一2；北院111抗更一2）</span></p>
+</div></details>
+
+</div>
+
+<h2 id="s4"><span class="n">四</span>絕對不要（附後果分級）</h2>
+<div class="card">
+<div class="warnbox">
+☐ 拒訪失聯掛電話 — 推定不適任<br>
+☐ 誘導式問小孩並錄音當證據 — 無證據能力＋非友善（北院115訴1803：幼童一問一答預設誘導不採信）<br>
+☐ 關說、追問報告、質疑中立 — 觀感扣分<br>
+☐ 小孩面前吵傳話選邊、恐嚇訊息 — 賠＋改定＋怠金（北院114訴6029）<br>
+☐ 反覆問案情預設誘導 — 非友善（新北113訴2963）<br>
+☐ 拖延證件／臨時改時間地點、要筆錄所無文件 — 間接阻撓（最高114台抗713）<br>
+☐ 中止已讀不理、不出席協處執行 — 未盡協力罰3萬（桃園115執事聲44）<br>
+☐ 現場尾隨爭執錄影、帶親友助陣、灌輸敵視 — 改定（桃園111抗更一1）<br>
+☐ 斷聯封鎖視訊、遷戶轉學未告知、擅攜離境藏匿 — 賠30萬＋略誘（台中114訴1565）<br>
+☐ 調解暫時處分履行命令已讀不理 — 怠金＋賠＋輸親權
+</div>
+
+<div class="compare"><div class="t">地雷：「小孩說不要」一句轉達，無勸說無補期</div><div class="safe">安全：「我陪你準時到，有擔心我幫你轉告。」＋訊息留紀錄＋給折衷補期。意願與排除障礙無衝突，不得諉以意願免責。</div></div>
+<div class="compare"><div class="t">地雷：預設答案、面交當眾問要不要見面</div><div class="safe">安全：開放式問開心事；「照心裡想的說就好。」面交由大人帶、社工評估漸進。（桃園114執事聲2）</div></div>
+<div class="compare"><div class="t">地雷：忠誠綁架、拿手足就學交換、威脅利誘</div><div class="safe">安全：「大人處理的事，你不用選邊。」會面是小孩權利非獎懲工具。</div></div>
+<div class="compare"><div class="t">地雷：面交助陣校門爭執、私下理論擅辦遷戶</div><div class="safe">安全：保持距離小孩自己走，失敗離開請委員記，不報警嚇小孩。改期提早書面同意。</div></div>
+
+<details><summary><b>後果分級（通用）</b></summary><div class="body">
+1. 履行勸告：家調先勸記入改定評估。<br>
+2. 怠金：強執128 I，3-30萬／次可連續處，常見3萬。<span class="small">（最高114台抗713；桃園115執事聲44）</span><br>
+3. 改定：1055 III＋1055-1 I(6)，長期惡意灌輸阻絕＝改定。<span class="small">（桃園111抗更一1）</span><br>
+4. 賠償：184 I＋195 III，完全剝奪1年約12-30萬。<span class="small">（台中114訴1565准30萬；北院114訴6029准12萬）</span>生病有假單暫停不賠；有到交付現場係小孩不敢走不算侵害。<br>
+5. 刑事：擅攜藏匿可涉略誘通緝。<br>
+</div></details>
+</div>
+
+<h2 id="s5"><span class="n">五</span>訪視後24小時＋交接＋配合調查</h2>
+<div class="card">
+<details open><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">1. 自己寫紀要</summary><div class="body">何時誰來、問什麼、怎麼答、小孩說什麼、有無補件。記行為＋次數＋影響，例：3個月3次未準時，無補期提議。</div></details>
+<details><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">2. 補件＋聯絡</summary><div class="body">準時補件；變更住址電話主動告知。不通短時內回訊確認會面不變、證件隨身。</div></details>
+<details><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">3. 交接做法</summary><div class="body">準時足額備證件衣物藥單，生病附假單主動給補期。會後訊息確認時間地點。會面逾30分未到視同放棄，遲早退經單位同意不擅變。</div></details>
+<details><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">4. 配合調查＋監督會面</summary><div class="body">主動開門不拒訪；備作息出勤聯絡簿就醫用藥托育安排；說清誰接送備餐陪睡功課生病；同意第三方陪同親職諮詢輔導商談；守切結不錄影不辱罵不打鬧，違重可終止；重病住院即通知他方交付證件，結束返還。<br><span class="small">兒少53（24h通報保密）、64＋70（處遇應配合訪視提供資料）；暫保僅經釋明即發≠終局認定；驗傷僅證傷勢不證加害人。（高院113抗更二1；北院112抗更一3；新北107訴462；台南112訴652）</span><br><div class="safe">不求全面停止（長期不利親情多不准），求暫第三方：每月__次每次__小時共__次，社工定交付，禁談訴訟灌輸勒索，不探聽。完成無衝突再議自主過夜。（嘉義115聲抗更二1；屏東115司家暫14）</div></div></details>
+<details><summary><input type="checkbox" class="chk" onclick="event.stopPropagation()" aria-label="完成勾選">5. 不重複通報</summary><div class="body">同一事由不向多機關重複施壓、不作籌碼；驗傷即時不隔日補開照片註日期；不每次會後逼問錄音；不持暫時保護令擴張禁探視（看主文相對人＋事項）；通常駁回／不起訴後不沿用舊令；要暫緩聲請暫時處分＋替代方案。教唆報假案虛偽離間一律不做。<br><span class="small">濫報特徵：逼問斷聯片面停會連續提告驗傷；保護紀錄：就醫學校社工警方齊備。</span></div></details>
+</div>
+
+<h2 id="s6"><span class="n">六</span>案例速查（全併入）</h2>
+<div class="card">
+<p class="small">公開裁判重點，可對照項目引用。</p>
+<details><summary><b>互動自然：</b>北院112抗更一3</summary><div class="body">表演考試＋照顧含糊＋面批＝不佳；自然遊戲＋區隔加分。</div></details>
+<details><summary><b>不適任推定：</b>北院111抗更一2</summary><div class="body">虛稱主顧詆毀擋訪視推定不適任；遲缺＋車內走動開慢一點。</div></details>
+<details><summary><b>經濟陪伴：</b>北院112抗更一1／高少家113抗更一2／高院110抗更一4</summary><div class="body">經濟優不如陪伴可配合；輪班換手過度倚賴扣分；固定工時順道接週末休可主顧，勞力折扶養。</div></details>
+<details><summary><b>繼續性＋調工時：</b>台南115婚更一1／台南113抗更一2</summary><div class="body">出生起長期主顧熟悉互動＝不輕變；轉制度公司調班＝改善加分；稍優不改定。</div></details>
+<details><summary><b>意願忠誠：</b>高院台南114上易220／北院112抗更一3／桃園111抗更一1</summary><div class="body">單獨會談熟悉符合年齡採；雙情境對比記僵硬迴避親子化；排除虐待後拒絕先假設保護反應，反覆並列不追問。</div></details>
+<details><summary><b>表意界線：</b>新竹115訴195／桃園114執事聲2</summary><div class="body">絕不逼違意表達，已說秘密不想談即停；表意非通關密語，3歲不作認定，禁面交當場問。</div></details>
+<details><summary><b>誘導：</b>嘉院113訴445／北院115訴1803／新北113訴2963</summary><div class="body">誘導複述可賠；誘導錄音無能力＋非友善。</div></details>
+<details><summary><b>照顧：</b>台南114抗更一1／高少家112抗更一1</summary><div class="body">汽座用藥自理主導力；誠實揭支持＋主導不扣，迫表意雙方扣。</div></details>
+<details><summary><b>居住教育：</b>新竹114司養聲10／台北111婚更一1／台南115抗更一1／台南115司家暫36</summary><div class="body">空房無具＝無準備；適齡物就醫調工時加分；透天穩定＋特教配合；睡沙發寄讀扣分，家調無疏忽可駁單獨。</div></details>
+<details><summary><b>早療：</b>桃園115司養聲32</summary><div class="body">說出領域評估日，每週固定缺課補請假，陪居家練習回診不中斷。</div></details>
+<details><summary><b>友善會面：</b>最高114台抗713／桃園115執事聲44／桃園111抗更一1</summary><div class="body">拖延證件間接阻撓罰3萬；只轉達不要無勸說罰3萬；灌輸搬家刁難改單獨。</div></details>
+<details><summary><b>剝奪後果：</b>台中114訴1565／北院114訴6029／台南112訴652</summary><div class="body">斷聯攜出境賠30萬＋略誘；完全剝奪賠12萬；逼問迎合＋離間改寫回憶賠，驗傷照無因果不採。</div></details>
+<details><summary><b>家暴推定：</b>高院113抗更二1／北院112抗更一3／新北107訴462</summary><div class="body">僅對配偶暴未及子女不推定；偶發無繼續＋通常駁回非家暴；暫保僅釋明≠終局，相對人非探視方不得拒會面，全身無傷參酌。</div></details>
+<details><summary><b>不實指控：</b>高雄113訴188／花蓮112訴158</summary><div class="body">爭親權捏造可誣告＋賠。<br><a href="https://judgment.judicial.gov.tw/FJUD/data.aspx?ty=JD&id=HLDM%2c112%2c%e8%a8%b4%2c158%2c20240626%2c1&ot=in" target="_blank">司法院原文：花蓮112訴158</a></div></details>
+<details><summary><b>暫時中間解：</b>嘉義115聲抗更二1／屏東115司家暫14</summary><div class="body">每月1次2小時共12次監督；僅久未探視不等不適任，維持現狀試行。</div></details>
+<p class="small">法條：民1055、1055-1、家事事件法104/106-109、家暴43、刑法169、民184/195、兒少53/64/70。金額刑度個案認定非通案。</p>
+</div>
+
+<h2 id="s7"><span class="n">七</span>名詞解釋（白話版）</h2>
+<div class="card">
+<p class="small">本表常用名詞，一句話看懂。正式主張以法條與律師完稿為準。</p>
+<dl class="gloss">
+<div class="grp">— 人：誰在看、誰在寫 —</div>
+<dt><span class="k">家調官</span></dt><dd>法院裡的家事調查官。負責約談雙方、查學校醫療通報紀錄，寫《家事調查報告》給法官。看的是「是非」：互動真不真、有沒有擋會面灌輸。</dd>
+<dt><span class="k">社工（訪視社工）</span></dt><dd>法院外包的社工。到家裡看實際怎麼顧：作息、接送、用藥、床位安全，寫《訪視報告》。看的是「能不能顧」。</dd>
+<dt><span class="k">程序監理人</span></dt><dd>法院為小孩指定的代表（律師或社工）。只替小孩的最佳利益發言，不替爸媽任何一方講話。</dd>
+<div class="grp">— 親權：小孩歸誰顧 —</div>
+<dt><span class="k">親權酌定／改定</span></dt><dd>酌定＝離婚時第一次決定小孩歸誰；改定＝事後換人顧。改定不比誰有錢，要證明對方「未盡保護教養或有不利情事」。</dd>
+<dt><span class="k">共同監護／單獨監護</span></dt><dd>共同＝大事兩人一起決定；單獨＝一人決定。雙方衝突大、無法合作時，法院傾向判單獨。</dd>
+<dt><span class="k">主要照顧者（主顧）</span></dt><dd>每天實際顧的人：接送、洗澡、餵藥、陪睡、盯功課。出錢多不算，顧得多才算。虛稱都自己顧會被推定不適任。</dd>
+<dt><span class="k">支持系統／代顧</span></dt><dd>長輩、保母、安親班等幫手。誠實講＋自己有主導就不扣分，隱瞞推諉才扣分。</dd>
+<dt><span class="k">繼續性</span></dt><dd>小孩從小誰顧、生活穩定就盡量不換。除非有不利情事，法院不輕易改變現狀。</dd>
+<div class="grp">— 小孩：怎麼聽、怎麼護 —</div>
+<dt><span class="k">最佳利益</span></dt><dd>判親權的總標準：安全、照顧、親情、意願全部一起看。不是只聽小孩說要跟誰。</dd>
+<dt><span class="k">表意權</span></dt><dd>小孩有權表達意見，法官依年齡成熟度權衡。不是通關密語：3歲不作認定，9歲以下可採但要註明單獨會談、符合年齡表述。</dd>
+<dt><span class="k">區隔衝突</span></dt><dd>大人的訴訟恩怨，不讓小孩捲入：不在小孩面前吵、傳話、選邊、探聽、灌輸。做得到就加分，做不到扣友善。</dd>
+<dt><span class="k">忠誠衝突／忠誠綁架</span></dt><dd>小孩怕選邊會失去一方的愛，被迫表態迎合。典型：跟一方能聊對方，另一方來電就僵硬迴避。</dd>
+<dt><span class="k">親子化</span></dt><dd>小孩被迫當大人的情緒配偶：替大人擔心、調解、傳話。家調看到會記不利。</dd>
+<dt><span class="k">誘導</span></dt><dd>先給答案再問、剪接錄音、一問一答套話、叫小孩背成人詞彙。法院不採信，還可能認定非友善、另判賠。</dd>
+<dt><span class="k">會面交往</span></dt><dd>沒拿到親權一方看小孩的權利，同時也是小孩的權利。不能拿來當獎懲或交換條件，也不能一句「小孩說不要」就免責。</dd>
+<div class="grp">— 程序與後果：不配合會怎樣 —</div>
+<dt><span class="k">暫時處分／暫時保護令</span></dt><dd>訴訟打完之前的暫時安排，只經釋明就發，不等於終局認定誰對誰錯。別拿暫時保護令擴張禁探視，要看主文寫的相對人＋事項。</dd>
+<dt><span class="k">監督會面</span></dt><dd>第三方（社工）在場的會面，時間地點由社工定。過渡用：表現好、無衝突再談自主過夜。</dd>
+<dt><span class="k">交付／協處／執行</span></dt><dd>把小孩交給會面方的程序。不配合＝未盡協力，可罰怠金、記入改定、另判賠。</dd>
+<dt><span class="k">怠金</span></dt><dd>不配合會面交付，法院一次罰 3–30 萬，可連續罰，常見 3 萬（強制執行法 128 I）。</dd>
+<dt><span class="k">通報（兒少 53）</span></dt><dd>知悉兒虐 24 小時內通報且保密。首次知悉就通報並留紀錄；同一事由別向多機關重複通報施壓，會扣友善。</dd>
+<dt><span class="k">早療</span></dt><dd>發展遲緩的早期療育。家調會問：領域、評估日、每週時數、缺課有無請假、有無陪居家練習回診不中斷。</dd>
+<dt><span class="k">寄讀</span></dt><dd>戶籍掛別處上學、無實際居住。扣分。要有正式學籍、固定學區，不頻搬轉學。</dd>
+</dl>
+</div>
+
+<div class="card small">通用版無個案資訊可公開分享。影音交律師保管判斷。本表研究整理，送法院以律師完稿為準。</div>
+
+</div>
+<footer>資料源：司法院裁判書系統・僅供研究參考，不構成法律意見</footer>
+<script>
+(function(){
+  var KEY='visit-check-v1';
+  var boxes=Array.prototype.slice.call(document.querySelectorAll('input.chk'));
+  var ptext=document.getElementById('ptext'),pfill=document.getElementById('pfill');
+  var saved={};
+  try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){saved={};}
+  boxes.forEach(function(b,i){
+    var k='c'+i;
+    b.dataset.k=k;
+    if(saved[k])b.checked=true;
+    b.addEventListener('click',function(e){e.stopPropagation();});
+    b.addEventListener('keydown',function(e){e.stopPropagation();});
+    b.addEventListener('change',function(){save();paint();});
+  });
+  function save(){
+    var o={};
+    boxes.forEach(function(b){o[b.dataset.k]=b.checked?1:0;});
+    try{localStorage.setItem(KEY,JSON.stringify(o));}catch(e){}
+  }
+  function paint(){
+    var n=boxes.filter(function(b){return b.checked;}).length;
+    if(ptext)ptext.textContent='已完成 '+n+' / '+boxes.length;
+    if(pfill)pfill.style.width=(boxes.length?Math.round(n/boxes.length*100):0)+'%';
+  }
+  var rp=document.getElementById('btn-reset');
+  if(rp)rp.addEventListener('click',function(){
+    if(!confirm('確定清除全部勾選？'))return;
+    boxes.forEach(function(b){b.checked=false;});
+    save();paint();
+  });
+  var pp=document.getElementById('btn-print');
+  if(pp)pp.addEventListener('click',function(){window.print();});
+  window.addEventListener('beforeprint',function(){
+    document.querySelectorAll('details').forEach(function(d){d.dataset.was=d.open?'1':'';d.open=true;});
+  });
+  window.addEventListener('afterprint',function(){
+    document.querySelectorAll('details').forEach(function(d){if(!d.dataset.was)d.open=false;delete d.dataset.was;});
+  });
+  paint();
+})();
+</script>
+</body>
+</html>
